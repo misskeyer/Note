@@ -21,7 +21,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 public class FragmentListCrime extends Fragment {
@@ -185,7 +187,9 @@ public class FragmentListCrime extends Fragment {
             this.crime = crime;
             titleView.setText(crime.getTitle());
             checkBox.setChecked(crime.getChecked());
-            dateView.setText(crime.getDate().toString());
+
+            DateFormat formats = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.CHINA);
+            dateView.setText(formats.format(crime.getDate()));
         }
     }
 

@@ -45,7 +45,7 @@ import datebase.CrimeDbSchema;
 
 public class FragmentCrime extends Fragment {
     private EditText edTitle;
-    private Button btnDate, btnSuspect, btnReport;
+    private Button btnDate, btnSuspect, btnReport,btnFinish;
     private CheckBox isSolved;
     private Crime crime;
     private UUID uuid;
@@ -102,6 +102,15 @@ public class FragmentCrime extends Fragment {
             }
         } else
             btnPhoto.setEnabled(false);
+
+        btnFinish = view.findViewById(R.id.btn_finish);
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+
         btnPhoto = view.findViewById(R.id.btn_photo_button);
         btnPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +142,7 @@ public class FragmentCrime extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_TEXT, getCrimeReport());
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Crime Report");
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "Crime Report");
                 intent = intent.createChooser(intent, "Send message via:");
                 startActivity(intent);
             }
@@ -159,7 +168,7 @@ public class FragmentCrime extends Fragment {
         edTitle.setText(crime.getTitle());
 
         btnDate = view.findViewById(R.id.btn_date);
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         DateFormat formats = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.CHINA) ;
         btnDate.setText(format.format(crime.getDate()));
 //        btnDate.setText(formats.format(crime.getDate()));
