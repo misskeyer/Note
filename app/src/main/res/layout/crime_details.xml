@@ -26,7 +26,7 @@
         android:layout_marginLeft="13dp"
         android:layout_marginRight="16dp"
         android:id="@+id/cb_crime_isSolved"
-        android:text="Solved"
+        android:text="Shared"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

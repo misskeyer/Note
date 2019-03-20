@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Note</string>
+    <string name="app_name">PhotoNote</string>
     <string name="subtitle_format">%1$s note</string>
     <string name="crime_report">%1$s!Share a funny picture with you.</string>
     <plurals name="subtitle_plural">

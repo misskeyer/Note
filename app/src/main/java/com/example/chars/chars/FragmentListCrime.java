@@ -88,9 +88,9 @@ public class FragmentListCrime extends Fragment {
         inflater.inflate(R.menu.crime_list_menu, menu);
         MenuItem subtitleItem = menu.findItem(R.id.show_subtitle);
         if (subtitleVisible)
-            subtitleItem.setTitle("隐藏子标题");
+            subtitleItem.setTitle("隐藏");
         else {
-            subtitleItem.setTitle("展开子标题");
+            subtitleItem.setTitle("展开");
         }
     }
 
